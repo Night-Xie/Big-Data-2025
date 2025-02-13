@@ -14,7 +14,7 @@ Dataset 3 (GDP & Population) : https://www.kaggle.com/datasets/shubhamsinha1107/
 Columns : (state, years ... ) 
 
 Dataset 4 (Statewise data, income) : https://www.kaggle.com/datasets/gokulrajkmv/indian-statewise-data-from-rbi (2.46 kB)
-Columns : tates_Union Territories,2000-01-INC,2011-12-INC,2001 - LIT,2011- LIT,2001 - POP,2011- POP,2001 -SEX_Ratio,2011 -SEX_Ratio,2001 -UNEMP,2011 -UNEMP,2001 -Poverty,2011 -Poverty
+Columns : (States_Union Territories,2000-01-INC,2011-12-INC,2001 - LIT,2011- LIT,2001 - POP,2011- POP,2001 -SEX_Ratio,2011 -SEX_Ratio,2001 -UNEMP,2011 -UNEMP,2001 -Poverty,2011 -Poverty)
 
 Dataset 5 (Education) : https://www.kaggle.com/datasets/jiteshkumarsahoo/indian-states-education-statistics?select=vocational-courses-taken.csv (78.1 kB)
 CSVs : availability-of-boys-toilet.csv
