@@ -11,7 +11,7 @@ Dataset 2 (internet access) : https://www.kaggle.com/datasets/akashsharma0105/ph
 Columns : (User ID,Age,Gender,Location,Phone Brand,OS,Screen Time (hrs/day),Data Usage (GB/month),Calls Duration (mins/day),Number of Apps Installed,Social Media Time (hrs/day),E-commerce Spend (INR/month),Streaming Time (hrs/day),Gaming Time (hrs/day),Monthly Recharge Cost (INR),Primary Use)
 
 Dataset 3 (GDP & Population) : https://www.kaggle.com/datasets/shubhamsinha1107/indian-state-gdp-and-population?select=population.csv (7.96 MB)
-Columns : (years ... ) 
+Columns : (state, years ... ) 
 
 Dataset 4 (Statewise data, income) : https://www.kaggle.com/datasets/gokulrajkmv/indian-statewise-data-from-rbi (2.46 kB)
 Columns : tates_Union Territories,2000-01-INC,2011-12-INC,2001 - LIT,2011- LIT,2001 - POP,2011- POP,2001 -SEX_Ratio,2011 -SEX_Ratio,2001 -UNEMP,2011 -UNEMP,2001 -Poverty,2011 -Poverty
