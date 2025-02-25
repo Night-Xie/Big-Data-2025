@@ -89,3 +89,25 @@ CREATE TABLE SCHOOL_ELECTRICITY_FACILITY (
 );
 
 
+CREATE TABLE population_data (
+    state VARCHAR(255),
+    `1951` INT NOT NULL,
+    `1961` INT NOT NULL,
+    `1971` INT NOT NULL,
+    `1981` INT NOT NULL,
+    `1991` INT NOT NULL,
+    `2001` INT NOT NULL,
+    `2011` INT NOT NULL,
+    data VARCHAR(255)NOT NULL );
+
+ CREATE TABLE results (
+	    
+         dummy INT NOT NULL,
+         marks INT NOT NULL,
+         state VARCHAR(50) NOT NULL,
+         city VARCHAR(50) NOT NULL,
+         center_name VARCHAR(100) NOT NULL,
+         center_number INT NOT NULL
+     );
+
+
