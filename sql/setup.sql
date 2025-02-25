@@ -150,3 +150,91 @@ CREATE TABLE INDIA(
     category VARCHAR(255)
 );
 
+DROP TABLE IF EXISTS LIBRARY_FACILITY;
+CREATE TABLE LIBRARY_FACILITY (
+    State VARCHAR(100) PRIMARY KEY,
+    Total_Schools_All_Management INT,
+    Total_Schools_Govt INT,
+    Total_Schools_Govt_Aided INT,
+    Total_Schools_Pvt_Unaided INT,
+    Total_Schools_Others INT,
+    Schools_with_Library_All_Management INT,
+    Schools_with_Library_Govt INT,
+    Schools_with_Library_Govt_Aided INT,
+    Schools_with_Library_Pvt_Unaided INT,
+    Schools_with_Library_Others INT,
+    Percent_Schools_with_Library_All_Management DECIMAL(5,2),
+    Percent_Schools_with_Library_Govt DECIMAL(5,2),
+    Percent_Schools_with_Library_Govt_Aided DECIMAL(5,2),
+    Percent_Schools_with_Library_Pvt_Unaided DECIMAL(5,2),
+    Percent_Schools_with_Library_Others DECIMAL(5,2)
+);
+
+DROP TABLE IF EXISTS NUMBER_OF_TEACHERS;
+CREATE TABLE NUMBER_OF_TEACHERS (
+    State VARCHAR(100) PRIMARY KEY,
+    Total_Male INT,
+    Total_Female INT,
+    Total_Teachers INT,
+    PrePrimary_Only_Male INT,
+    PrePrimary_Only_Female INT,
+    PrePrimary_Only_Total INT,
+    PrePrimary_Primary_Male INT,
+    PrePrimary_Primary_Female INT,
+    PrePrimary_Primary_Total INT,
+    Primary_Only_Male INT,
+    Primary_Only_Female INT,
+    Primary_Only_Total INT,
+    Primary_UpperPrimary_Male INT,
+    Primary_UpperPrimary_Female INT,
+    Primary_UpperPrimary_Total INT,
+    UpperPrimary_Only_Male INT,
+    UpperPrimary_Only_Female INT,
+    UpperPrimary_Only_Total INT,
+    UpperPrimary_Secondary_Male INT,
+    UpperPrimary_Secondary_Female INT,
+    UpperPrimary_Secondary_Total INT,
+    Secondary_Only_Male INT,
+    Secondary_Only_Female INT,
+    Secondary_Only_Total INT,
+    Secondary_HigherSecondary_Male INT,
+    Secondary_HigherSecondary_Female INT,
+    Secondary_HigherSecondary_Total INT,
+    HigherSecondary_Only_Male INT,
+    HigherSecondary_Only_Female INT,
+    HigherSecondary_Only_Total INT
+);
+
+DROP TABLE IF EXISTS VOCATIONAL_COURSES;
+CREATE TABLE VOCATIONAL_COURSES (
+    State VARCHAR(100) PRIMARY KEY,
+    Total_Secondary_HigherSecondary_Schools INT,
+    Govt_Schools INT,
+    Govt_Aided_Schools INT,
+    Pvt_Unaided_Schools INT,
+    Other_Schools INT,
+    Schools_With_Vocational_All INT,
+    Schools_With_Vocational_Govt INT,
+    Schools_With_Vocational_Govt_Aided INT,
+    Schools_With_Vocational_Pvt_Unaided INT,
+    Schools_With_Vocational_Others INT,
+    Enrolment_Vocational_All INT,
+    Enrolment_Vocational_Govt INT,
+    Enrolment_Vocational_Govt_Aided INT,
+    Enrolment_Vocational_Pvt_Unaided INT,
+    Enrolment_Vocational_Others INT
+);
+
+DROP TABLE IF EXISTS UNEMPLOYMENT_RATE;
+CREATE TABLE UNEMPLOYMENT_RATE (
+    id SERIAL PRIMARY KEY,
+    state VARCHAR(100),
+    date DATE,
+    frequency CHAR(1),
+    estimated_unemployment_rate DECIMAL(5,2),
+    estimated_employed BIGINT,
+    estimated_labour_participation_rate DECIMAL(5,2),
+    region VARCHAR(50),
+    longitude DECIMAL(8,4),
+    latitude DECIMAL(8,4)
+);
