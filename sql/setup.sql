@@ -225,3 +225,16 @@ CREATE TABLE VOCATIONAL_COURSES (
     Enrolment_Vocational_Others INT
 );
 
+DROP TABLE IF EXISTS UNEMPLOYMENT_RATE;
+CREATE TABLE UNEMPLOYMENT_RATE (
+    id SERIAL PRIMARY KEY,
+    state VARCHAR(100),
+    date DATE,
+    frequency CHAR(1),
+    estimated_unemployment_rate DECIMAL(5,2),
+    estimated_employed BIGINT,
+    estimated_labour_participation_rate DECIMAL(5,2),
+    region VARCHAR(50),
+    longitude DECIMAL(8,4),
+    latitude DECIMAL(8,4)
+);
