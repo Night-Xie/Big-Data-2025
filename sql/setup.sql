@@ -88,8 +88,8 @@ CREATE TABLE SCHOOL_ELECTRICITY_FACILITY (
     Percent_Schools_Functional_Electricity_Others DECIMAL(5,2) NOT NULL
 );
 
-
-CREATE TABLE population_data (
+DROP TABLE IF EXISTS POPULATION_DATA;
+CREATE TABLE POPULATION_DATA(
     state VARCHAR(255),
     `1951` INT NOT NULL,
     `1961` INT NOT NULL,
@@ -99,8 +99,9 @@ CREATE TABLE population_data (
     `2001` INT NOT NULL,
     `2011` INT NOT NULL,
     data VARCHAR(255)NOT NULL );
-
- CREATE TABLE results (
+ 
+ DROP TABLE IF EXISTS RESULTS;
+ CREATE TABLE RESULTS(
 	    
          dummy INT NOT NULL,
          marks INT NOT NULL,
@@ -110,4 +111,42 @@ CREATE TABLE population_data (
          center_number INT NOT NULL
      );
 
+DROP TABLE IF EXISTS INDIA;
+CREATE TABLE INDIA(
+    state VARCHAR(255),
+    `1990` INT,
+    `1991` INT,
+    `1992` INT,
+    `1993` INT,
+    `1994` INT,
+    `1995` INT,
+    `1996` INT,
+    `1997` INT,
+    `1998` INT,
+    `1999` INT,
+    `2000` INT,
+    `2001` INT,
+    `2002` INT,
+    `2003` INT,
+    `2004` INT,
+    `2005` INT,
+    `2006` INT,
+    `2007` INT,
+    `2008` INT,
+    `2009` INT,
+    `2010` INT,
+    `2011` INT,
+    `2012` INT,
+    `2013` INT,
+    `2014` INT,
+    `2015` INT,
+    `2016` INT,
+    `2017` INT,
+    `2018` INT,
+    `2019` INT,
+    `2020` INT,
+    `2021` INT,
+    `2022` INT,
+    category VARCHAR(255)
+);
 
