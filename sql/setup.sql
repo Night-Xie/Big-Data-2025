@@ -104,11 +104,11 @@ CREATE TABLE POPULATION_DATA(
  DROP TABLE IF EXISTS RESULTS;
  CREATE TABLE RESULTS(
 	    
-         dummy INT NOT NULL,
+         dummy BIGINT NOT NULL,
          marks INT NOT NULL,
          state VARCHAR(50) NOT NULL,
          city VARCHAR(50) NOT NULL,
-         center_name VARCHAR(100) NOT NULL,
+         center_name VARCHAR(255) NOT NULL,
          center_number INT NOT NULL
      );
 
@@ -208,7 +208,7 @@ CREATE TABLE NUMBER_OF_TEACHERS (
 
 DROP TABLE IF EXISTS VOCATIONAL_COURSES;
 CREATE TABLE VOCATIONAL_COURSES (
-    State VARCHAR(100) PRIMARY KEY,
+    State VARCHAR(100),
     Total_Secondary_HigherSecondary_Schools INT,
     Govt_Schools INT,
     Govt_Aided_Schools INT,

@@ -2,6 +2,7 @@ import pandas as pd
 import mysql.connector
 import sys
 import getpass
+import numpy as np
 
 #check arg len 
 if len(sys.argv) != 2: 
@@ -27,7 +28,14 @@ source_sql_map = {
     "data/RBI DATA states_wise_population_Income.csv": "RBI_DATA",
     "data/internet-facility.csv": "SCHOOL_INTERNET_FACILITY",
     "data/computer-availability.csv": "SCHOOL_COMPUTER_FACILITY",
-    "data/electricity-availability.csv": "SCHOOL_ELECTRICITY_FACILITY"
+    "data/electricity-availability.csv": "SCHOOL_ELECTRICITY_FACILITY",
+    "data/vocational-courses-taken.csv": "VOCATIONAL_COURSES",
+    "data/india.csv": "INDIA",
+    "data/library-facility.csv": "LIBRARY_FACILITY",
+    "data/number-of-teachers.csv": "NUMBER_OF_TEACHERS",
+    "data/population.csv": "POPULATION_DATA",
+    "data/NEET_2024_RESULTS.csv": "RESULTS",
+    "data/Unemployment in India.csv": "UNEMPLOYMENT_RATE",     
 }
 
 def get_columns(cursor, table_name):
@@ -39,10 +47,12 @@ def load(cursor, source_sql_map):
     for csv_file, table_name in source_sql_map.items():
         try:
             df = pd.read_csv(csv_file)
+            df = df.replace({np.nan: None})
+
             columns = get_columns(cursor, table_name)
 
             placeholders = ', '.join(['%s'] * len(df.columns))
-            columns_str = ', '.join([f"{col}" for col in columns])
+            columns_str = ', '.join([f"`{col}`" for col in columns])
 
             sql = f"INSERT INTO {table_name} ({columns_str}) VALUES ({placeholders})"
 
