@@ -228,10 +228,9 @@ CREATE TABLE VOCATIONAL_COURSES (
 
 DROP TABLE IF EXISTS UNEMPLOYMENT_RATE;
 CREATE TABLE UNEMPLOYMENT_RATE (
-    id SERIAL PRIMARY KEY,
     state VARCHAR(100),
-    date DATE,
-    frequency CHAR(1),
+    date VARCHAR(20),
+    frequency VARCHAR(10),
     estimated_unemployment_rate DECIMAL(5,2),
     estimated_employed BIGINT,
     estimated_labour_participation_rate DECIMAL(5,2),

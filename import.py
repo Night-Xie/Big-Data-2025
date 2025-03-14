@@ -3,6 +3,7 @@ import mysql.connector
 import sys
 import getpass
 import numpy as np
+import time
 
 #check arg len 
 if len(sys.argv) != 2: 
@@ -34,8 +35,8 @@ source_sql_map = {
     "data/library-facility.csv": "LIBRARY_FACILITY",
     "data/number-of-teachers.csv": "NUMBER_OF_TEACHERS",
     "data/population.csv": "POPULATION_DATA",
-    "data/NEET_2024_RESULTS.csv": "RESULTS",
-    "data/Unemployment in India.csv": "UNEMPLOYMENT_RATE",     
+    "data/Unemployment_Rate_upto_11_2020.csv" : "UNEMPLOYMENT_RATE",  
+    "data/NEET_2024_RESULTS.csv": "RESULTS",   
 }
 
 def get_columns(cursor, table_name):
@@ -70,9 +71,17 @@ def load(cursor, source_sql_map):
 link = mysql.connector.connect(**link_args)
 cursor = link.cursor()
 
+# record start time
+start = time.time() 
 load(cursor, source_sql_map)
+#record finish time
+end = time.time()
 
 # commit & close connection
 link.commit()
 cursor.close()
 link.close()
+
+time_taken = end - start
+print(f"Time elapsed: {time_taken} seconds.")
+
