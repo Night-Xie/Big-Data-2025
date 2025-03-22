@@ -21,9 +21,17 @@ GROUP BY state;
 	# -- -- -- Economic Status -- -- -- 
 
 #(state, GDP_2011, GDP_2021)
-SELECT state, `2011`, `2021`
+SELECT state, `2011` AS GDP_2011, `2021` AS GDP_2021
 FROM INDIA
 WHERE category = "Gross State Domestic Product";
+
+#GDP per Capita 
+SELECT INDIA.state, 
+	   ROUND(INDIA.`2011` /  POPULATION_DATA.`2011`,2) AS GDP_PER_CAPITA_2011,
+	   ROUND(INDIA.`2021` / POPULATION_DATA.`2011`,2) AS GDP_PER_CAPITA_2021
+FROM INDIA JOIN POPULATION_DATA
+ON INDIA.state = POPULATION_DATA.state
+WHERE INDIA.category = "Gross State Domestic Product" AND POPULATION_DATA.data = "Total Population";
 
 #(state, AVG_ESTIMATED_UNEMPLOYMENT_RATE_2020)
 SELECT state, ROUND(AVG(estimated_unemployment_rate),2) AS AVG_ESTIMATED_UNEMPLOYMENT_RATE_2020
