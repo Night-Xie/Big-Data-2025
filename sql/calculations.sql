@@ -48,14 +48,14 @@ SELECT state, `2011` AS PER_CAPITA_INCOME_2011, `2021`AS PER_CAPITA_INCOME_2021
 FROM INDIA
 WHERE category = "Per Capita Income";
 
-#(state, POVERTY_RATE_2011) // 0.00 sec
-SELECT States_Union_Territories AS state, POVERTY_2011 AS POVERTY_RATE_2011
-FROM RBI_DATA;
-
 #(state, LITERACY_2011) // 0.00 sec
 SELECT state, `2011` AS LITERACY_2011
 FROM POPULATION_DATA
 WHERE data = "Literacy Rate";
+
+#(state, POVERTY_RATE_2011) // 0.00 sec
+SELECT States_Union_Territories AS state, POVERTY_2011 AS POVERTY_RATE_2011
+FROM RBI_DATA;
 
 	# -- -- -- Education Infrastructure -- -- -- 
 
