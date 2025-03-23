@@ -10,7 +10,7 @@ From project root -
 
  - bash data/download.sh 					<- download all csv files
 
-### getting results from MYSQL :
+### Getting results from MYSQL :
 
 1. mysql run "SOURCE sql/setup.sql"			<- setup tables in mysql
 2. python import.py sql_user				<- import data from CSVs
@@ -18,7 +18,7 @@ From project root -
 3. mysql run queries from sql/calculations.sql <- get specific results (contains benchmark time for all queries)
 3. mysql run "SOURCE sql/get_results.sql" 	   <- get ALL results as SQL table state_results (for further analysis)
 
-## getting results with Spark (NEET mark averages)
+### Getting results with Spark (NEET mark averages)
 
 1. python mapreduce.py						<- get computation-intensive results as formatted table 
 
