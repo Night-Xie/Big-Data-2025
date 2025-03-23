@@ -102,21 +102,19 @@ INDIA AS (
     	FROM POPULATION_DATA
     	WHERE data = "Literacy Rate"
 	)
-	SELECT 
-    COALESCE(gdp.state, gdp_per_capita.state, unemployment.state, 
-             population.state, income.state, literacy.state) AS state,
+	SELECT   population.state AS state,
    			 gdp.GDP_2011, gdp.GDP_2021,
     		 gdp_per_capita.GDP_PER_CAPITA_2011, gdp_per_capita.GDP_PER_CAPITA_2021,
     		 unemployment.AVG_ESTIMATED_UNEMPLOYMENT_RATE_2020,
     		 population.POPULATION_2011, population.POPULATION_2021,
     		 income.PER_CAPITA_INCOME_2011, income.PER_CAPITA_INCOME_2021,
     		 literacy.LITERACY_2011
-	FROM GDP gdp
-	LEFT JOIN GDP_PER_CAPITA gdp_per_capita ON gdp.state = gdp_per_capita.state
-	LEFT JOIN UNEMPLOYMENT unemployment ON gdp.state = unemployment.state
-	LEFT JOIN POPULATION population ON gdp.state = population.state
-	LEFT JOIN INCOME income ON gdp.state = income.state
-	LEFT JOIN LITERACY literacy ON gdp.state = literacy.state
+	FROM POPULATION population
+	LEFT JOIN GDP gdp ON population.state = gdp.state
+	LEFT JOIN GDP_PER_CAPITA gdp_per_capita ON population.state = gdp_per_capita.state
+	LEFT JOIN UNEMPLOYMENT unemployment ON population.state = unemployment.state
+	LEFT JOIN INCOME income ON population.state = income.state
+	LEFT JOIN LITERACY literacy ON population.state = literacy.state
 ),
 SCHOOL AS (
 	WITH POVERTY AS (
@@ -139,21 +137,19 @@ SCHOOL AS (
     	SELECT State AS state, Percent_Schools_with_Library_All_Management AS SCHOOLS_WITH_LIBRARIES
     	FROM LIBRARY_FACILITY
 	)
-	SELECT 
-    	COALESCE(p.state, si.state, sc.state, se.state, sl.state) AS state,
+	SELECT si.state AS state,
     			 p.POVERTY_RATE_2011,
     			 si.SCHOOLS_WITH_INTERNET,
     			 sc.SCHOOLS_WITH_COMPUTERS,
     			 se.SCHOOLS_WITH_FUNCTIONAL_ELECTRICITY,
     		  	 sl.SCHOOLS_WITH_LIBRARIES
-	FROM POVERTY p
-	LEFT JOIN SCHOOLS_INTERNET si ON p.state = si.state
-	LEFT JOIN SCHOOLS_COMPUTERS sc ON p.state = sc.state
-	LEFT JOIN SCHOOLS_ELECTRICITY se ON p.state = se.state
-	LEFT JOIN SCHOOLS_LIBRARIES sl ON p.state = sl.state
+	FROM SCHOOLS_INTERNET si
+	LEFT JOIN POVERTY p ON si.state = p.state
+	LEFT JOIN SCHOOLS_COMPUTERS sc ON si.state = sc.state
+	LEFT JOIN SCHOOLS_ELECTRICITY se ON si.state = se.state
+	LEFT JOIN SCHOOLS_LIBRARIES sl ON si.state = sl.state
 )
-SELECT 
-    COALESCE(sm.neet, sm.india_pop_unemployment, sm.rbi_schools) AS STATE,
+SELECT sm.neet AS STATE,
     		 n.STATE_AVERAGE_NEET_MARK,
     		 n.STATE_VS_NATIONAL_RATIO,
     		 i.GDP_2011, i.GDP_2021,
