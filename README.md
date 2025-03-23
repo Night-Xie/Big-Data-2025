@@ -14,7 +14,9 @@ From project root -
 
 1. mysql run "SOURCE sql/setup.sql"			<- setup tables in mysql
 2. python import.py sql_user				<- import data from CSVs
-3. mysql run "SOURCE sql/get_results.sql" 	<- get results as SQL table state_results
+
+3. mysql run queries from sql/calculations.sql <- get specific results (contains benchmark time for all queries)
+3. mysql run "SOURCE sql/get_results.sql" 	   <- get ALL results as SQL table state_results (for generating graphs)
 
 ## getting results with Spark (NEET mark averages)
 
